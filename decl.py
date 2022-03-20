@@ -1,8 +1,10 @@
 import logging
-#logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
+
+# logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
 
 
 dictionary = {}
+
 
 def dekl(mode, inflekativ, arg1="0", arg2="0", arg3="0"):
     if mode == "subst":
@@ -26,6 +28,7 @@ def fullformat(mode, liste):
         resultpl = f"Plural\nNominativ: {liste[8]}\nAkkusativ: {liste[9]}\nLokativ: {liste[10]}\nOrginativ: {liste[11]}\nDirektativ: {liste[12]}\nInstrumentativ: {liste[13]}\nPossessiv: {liste[14]}\nTotalitiv: {liste[15]}"
         return (resultsg + resultpl)
 
+
 class Kasus:
     class sg:
         nom = "энзу"
@@ -37,16 +40,16 @@ class Kasus:
         pos = "эногōрy"
         tot = "эногōга"
 
+        @staticmethod
         def dekl(wort):
-            res = []
-            res.append(wort + Kasus.sg.nom)
-            res.append(wort + Kasus.sg.akk)
-            res.append(wort + Kasus.sg.lok)
-            res.append(wort + Kasus.sg.org)
-            res.append(wort + Kasus.sg.dir)
-            res.append(wort + Kasus.sg.ins)
-            res.append(wort + Kasus.sg.pos)
-            res.append(wort + Kasus.sg.tot)
+            res = [wort + Kasus.sg.nom,
+                   wort + Kasus.sg.akk,
+                   wort + Kasus.sg.lok,
+                   wort + Kasus.sg.org,
+                   wort + Kasus.sg.dir,
+                   wort + Kasus.sg.ins,
+                   wort + Kasus.sg.pos,
+                   wort + Kasus.sg.tot]
             return res
 
     class pl:
@@ -59,27 +62,26 @@ class Kasus:
         pos = "каогōрy"
         tot = "каогōга"
 
+        @staticmethod
         def dekl(wort):
-            res = []
-            res.append(wort + Kasus.pl.nom)
-            res.append(wort + Kasus.pl.akk)
-            res.append(wort + Kasus.pl.lok)
-            res.append(wort + Kasus.pl.org)
-            res.append(wort + Kasus.pl.dir)
-            res.append(wort + Kasus.pl.ins)
-            res.append(wort + Kasus.pl.pos)
-            res.append(wort + Kasus.pl.tot)
+            res = [wort + Kasus.pl.nom,
+                   wort + Kasus.pl.akk,
+                   wort + Kasus.pl.lok,
+                   wort + Kasus.pl.org,
+                   wort + Kasus.pl.dir,
+                   wort + Kasus.pl.ins,
+                   wort + Kasus.pl.pos,
+                   wort + Kasus.pl.tot]
             return res
 
-    def __init__():
-        pass
 
 class Wort:
     def __init__(self, wort, wortart):
         pass
 
+
 class Substantiv:
-    def __init__(self, inflekativ, wortart, ipa, definition, dekl):
+    def __init__(self, inflekativ, wortart, ipa, definition, deklination):
         pass
 
 
