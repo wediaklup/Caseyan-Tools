@@ -85,12 +85,17 @@ class Substantiv:
         pass
 
 
+def load():
+    """with open("liste.kaz", "r") as f:
+        for lines in f:
+            pass"""
+    f = open("liste.kaz", "r")
+    data = f.read()
+    f.close()
+    data = data.split("\n")
+    return data
+
+
 while True:
     wrt = input("Zu deklinieren> ")
     print(fullformat("subst", dekl("subst", wrt)) + "\n")
-
-
-def load():
-    with open("liste.kaz", "r") as f:
-        for lines in f:
-            pass
